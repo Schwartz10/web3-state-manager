@@ -1,7 +1,7 @@
 {
   "name": "web3manager",
   "version": "1.0.0",
-  "description": "A component and associated reducer that, together,  manage front-end application state with web3",
+  "description": "A component and associated reducer that, together, manage front-end application state with web3",
   "main": "index.js",
   "scripts": {
     "test": "test"
