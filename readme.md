@@ -1,5 +1,7 @@
 View on github: https://github.com/Schwartz10/web3manager/
 
+This node module is exceptionally useful for developers writing blockchain apps using the `react-redux` module
+
 The web3-state-manager does exactly what it's named - it syncs your application's front-end state with the state of web3 through the redux store.
 
 It's also capable of placing a single smart contract in your redux store. Find configuration instructions below.
