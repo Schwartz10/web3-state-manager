@@ -1,7 +1,7 @@
 import React from 'react';
 import Web3 from 'web3';
 import { connect } from 'react-redux';
-import { setWeb3, setAccount, setValidNetwork, initializeContract, fetchContract } from '../store/web3';
+import { setWeb3, setAccount, setValidNetwork, initializeContract, fetchContract } from '../store';
 
 const fetchWeb3 = (localProvider = null) => {
   let { web3 } = window;
@@ -33,7 +33,7 @@ class Web3Manager extends React.Component {
     clearInterval(this.intervalId);
   }
 
-  collectWeb3Data() {
+  async collectWeb3Data(){
     // if any localProvider was passed in as prop, we use it to construct the web3 object
     const { localProvider, hasWeb3, setWeb3,
       currentAccount, setAccount,
@@ -61,7 +61,7 @@ class Web3Manager extends React.Component {
       if (changedToValidNetwork) setValidNetwork(true);
 
       /* ------------- checks for unlocked account change -------------- */
-      const [ account ] = web3.eth.accounts;
+      const [ account ] = await web3.eth.getAccounts();
       const recentlyChangedAccount = account && account !== currentAccount;
       const recentlyLoggedOut = !account && currentAccount;
 
@@ -95,7 +95,7 @@ function mapStateToProps(state, props) {
   };
 }
 
-export default connect(
+export const Web3StateManager = connect(
   mapStateToProps,
   {
     setWeb3,
