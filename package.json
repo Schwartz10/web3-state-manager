@@ -1,11 +1,8 @@
 {
-  "name": "web3manager",
+  "name": "web3-state-manager",
   "version": "1.0.0",
   "description": "A component and associated reducer that, together, manage front-end application state with web3",
   "main": "index.js",
-  "scripts": {
-    "test": "test"
-  },
   "keywords": [
     "react",
     "redux",
@@ -16,6 +13,13 @@
     "smart",
     "contract"
   ],
-  "author": "Jon Schwartz",
-  "license": "ISC"
+  "author": "Jon Schwartz <jpschwartz2@uwalumni.com>",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.3.2",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "truffle": "^4.1.6",
+    "web3": "^1.0.0-beta.34"
+  }
 }
