@@ -1,6 +1,6 @@
 The web3-state-manager does exactly what it's named - it syncs your application's front-end state with the state of web3 through the redux store.
 
-It's also capable of placing a single smart contract in your redux store too. Find configuration instructions below.
+It's also capable of placing a single smart contract in your redux store. Find configuration instructions below.
 
 ### The Challenge:
 Managing the front end application state with web3 can get tricky - especially when users switch between networks and accounts on MetaMask.
@@ -38,15 +38,16 @@ export default store;
 Then, on your front end using React, simply render the Web3StateManager component anywhere in your app, as long as its rendered _after_ the redux Provider Component:
 
 ```js
-ReactDOM.render(
-  <Provider store={store}>
+import { Web3StateManager } from 'web3-state-manager';
+
+render(){
+  return(
     <div>
+      {...} { /* other JSX in a high up component */ }
       <Web3StateManager />
-      <Routes />
     </div>
-  </Provider>,
-  document.getElementById('app')
-)
+  )
+}
 ```
 
 _Note: For performance reasons, it's recommended to render Web3StateManager as high up in your render tree as possible - rerendering the Web3StateManager component could cause weird bugs._
