@@ -67,7 +67,54 @@ Web3StateManager takes props. All props are optional.
 | `contract` | compiled smart contract from Truffle | will put the compiled and deployed smart contract on the redux store. The compiled contract must also be migrated to the same network that the user is on. See below for further instructions |
 
 
+### Interacting with smart contracts through Web3StateManager and redux
 
+If you're using Truffle, after contract compilation you should have a build directory in your file structure containing JSON's that look like:
+
+```json
+{
+  "contractName": "NoteOwnership",
+  "abi": [...]
+  ...
+}
+```
+
+To interact with this contract:
+
+```js
+import Contract from '<path>/contracts/Contract.json'
+import { Web3StateManager } from 'web3-state-manager';
+
+render(){
+  return(
+    <div>
+      {...} { /* other JSX in a high up component */ }
+      <Web3StateManager contract={Contract} />
+    </div>
+  )
+}
+// simply pass the compiled contract to the Web3StateManager and it will take care of the rest
+```
+
+In any component, subscribe to the `contract` property of state and you can call contract functions directly
+
+```js
+// outside of your component, require your contract in mapStateToProps
+
+function mapStateToProps(state){
+  return(
+    contract: state.contract
+  )
+}
+
+render(){
+  // access your contract via props
+  const { contract } = this.props;
+  return(
+    <button onClick={() => {contract.randomFunc()}}>Call random smart contract function</button>
+  )
+}
+```
 
 
 view on npm: https://www.npmjs.com/package/web3-state-manager
