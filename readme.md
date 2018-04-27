@@ -55,12 +55,12 @@ _Note: For performance reasons, it's recommended to render Web3StateManager as h
 
 #### Passing props to the Web3StateManager Component:
 
-Web3StateManager takes props:
+Web3StateManager takes props. All props are optional.
 
 | Prop      | Value        | Description                      |
 |:----------|:-------------|:---------------------------------|
 | `interval` | Number (ms)  | How often Web3StateManager should re-ping web3 for updates |
-| `requiredNetwork` | Number (1 => Mainnet, 2 => Morden 3 => Ropsten 4 => Rinkby) | Sets `validNetwork` prop in redux store to `false` if the user is not on the requiredNetwork |
+| `requiredNetwork` | Number (1 => Mainnet, 2 => Morden, 3 => Ropsten, 4 => Rinkby) | Sets `validNetwork` prop in redux store to `false` if the user is not on the requiredNetwork |
 | `localProvider` | URI (localhost:8545) | Instructs the web manager to construct the web3 object from a local provider instead of using one injected from the browser. Do not use this prop in addition to using MetaMask or another web3 injection extension. The localProvider will always take precedent |
 | `contract` | compiled smart contract from Truffle | will put the compiled and deployed smart contract on the redux store. The compiled contract must also be migrated to the same network that the user is on. See below for further instructions |
 
