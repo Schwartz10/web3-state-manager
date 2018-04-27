@@ -1,6 +1,6 @@
 {
   "name": "web3-state-manager",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A component and associated reducer that, together, manage front-end application state with web3",
   "main": "index.js",
   "keywords": [
