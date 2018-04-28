@@ -67,7 +67,7 @@ class Web3Manager extends React.Component {
 
       // if an important account changed, dispatch the appropriate action
       if (recentlyChangedAccount || recentlyLoggedOut) {
-        setAccount(account);
+        setAccount(account || null);
       }
 
       /* -------- initializes smart contract if not already done ---------- */
