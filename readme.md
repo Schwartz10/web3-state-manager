@@ -1,4 +1,4 @@
-View on github: https://github.com/Schwartz10/web3manager/
+View on github: https://github.com/Schwartz10/web3-state-manager/
 
 This node module is exceptionally useful for developers writing blockchain apps using the `react-redux` module
 
