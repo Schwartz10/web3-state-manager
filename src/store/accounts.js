@@ -21,6 +21,6 @@ export default function (state = defaultAccount, action) {
     case GET_ACCOUNT:
       return action.account;
     default:
-      return state
+      return state;
   }
 }
